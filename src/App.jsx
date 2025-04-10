@@ -9,7 +9,7 @@ import ErrorMessage from "./components/ErrorMassage/ErrorMassage";
 import ImageModal from "./components/ImageModal/ImageModal";
 
 const ACCESS_KEY = import.meta.env.VITE_UNSPLASH_ACCESS_KEY;
-const URL = import.meta.env.URL_UNSPLASH;
+const URL = import.meta.env.VITE_URL_UNSPLASH;
 
 const App = () => {
   const [images, setImages] = useState([]);
