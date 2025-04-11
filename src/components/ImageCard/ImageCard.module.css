@@ -4,4 +4,6 @@
   border-radius: 8px;
   display: block;
   object-fit: cover;
+  object-position: center;
+  overflow: hidden;
 }

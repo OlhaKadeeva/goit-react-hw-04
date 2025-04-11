@@ -6,9 +6,11 @@ import ImageGallery from "./components/ImageGallery/ImageGallery";
 import Loader from "./components/Loader/Loader";
 import LoadMoreBtn from "./components/LoadMoreBtn/LoadMoreBtn";
 import ErrorMessage from "./components/ErrorMassage/ErrorMassage";
-import ImageModal from "./components/ImageModal/ImageModal";
 
-// ReactModal.setAppElement("#root");
+import ImageModal from "./components/ImageModal/ImageModal";
+import ReactModal from "react-modal";
+
+ReactModal.setAppElement("#root");
 
 const ACCESS_KEY = import.meta.env.VITE_UNSPLASH_ACCESS_KEY;
 const URL = import.meta.env.VITE_URL_UNSPLASH;
@@ -46,7 +48,7 @@ const App = () => {
         }
         setTotalPages(response.data.total_pages);
         setError(null);
-      } catch (err) {
+      } catch (error) {
         setError("Failed to fetch images");
       } finally {
         setIsLoading(false);
@@ -71,7 +73,7 @@ const App = () => {
   const closeModal = () => setSelectedImage(null);
 
   return (
-    <div>
+    <>
       <SearchBar onSubmit={handleSearch} />
       {error && <ErrorMessage message={error} />}
       <ImageGallery images={images} onImageClick={openModal} />
@@ -82,7 +84,7 @@ const App = () => {
       {selectedImage && (
         <ImageModal isOpen={true} image={selectedImage} onClose={closeModal} />
       )}
-    </div>
+    </>
   );
 };
 

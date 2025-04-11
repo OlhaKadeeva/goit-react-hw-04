@@ -1,16 +1,27 @@
-.ReactModal__Overlay {
+/* .ReactModal__Overlay {
+  top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
   background-color: rgba(0, 0, 0, 0.75) !important;
-}
-
-.ReactModal__Content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  right: auto;
-  bottom: auto;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
+} */
+/* .ReactModal__Overlay {
+  position: relative;
+  overflow: hidden;
+  margin: 5vh auto;
+  height: 90vh;
   background: white;
   padding: 20px;
+  border-radius: 10px;
+  outline: none;
+} */
+/* .modpic {
+  height: 100%;
   border-radius: 8px;
-}
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  overflow: hidden;
+} */
