@@ -8,6 +8,8 @@ import LoadMoreBtn from "./components/LoadMoreBtn/LoadMoreBtn";
 import ErrorMessage from "./components/ErrorMassage/ErrorMassage";
 import ImageModal from "./components/ImageModal/ImageModal";
 
+// ReactModal.setAppElement("#root");
+
 const ACCESS_KEY = import.meta.env.VITE_UNSPLASH_ACCESS_KEY;
 const URL = import.meta.env.VITE_URL_UNSPLASH;
 
@@ -78,7 +80,7 @@ const App = () => {
         <LoadMoreBtn onClick={loadMore} />
       )}
       {selectedImage && (
-        <ImageModal image={selectedImage} onClose={closeModal} />
+        <ImageModal isOpen={true} image={selectedImage} onClose={closeModal} />
       )}
     </div>
   );
