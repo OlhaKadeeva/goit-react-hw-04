@@ -6,14 +6,16 @@ import ImageGallery from "./components/ImageGallery/ImageGallery";
 import Loader from "./components/Loader/Loader";
 import LoadMoreBtn from "./components/LoadMoreBtn/LoadMoreBtn";
 import ErrorMessage from "./components/ErrorMassage/ErrorMassage";
-
 import ImageModal from "./components/ImageModal/ImageModal";
 import ReactModal from "react-modal";
 
-ReactModal.setAppElement("#root");
+// ReactModal.setAppElement("#root");
 
-const ACCESS_KEY = import.meta.env.VITE_UNSPLASH_ACCESS_KEY;
-const URL = import.meta.env.VITE_URL_UNSPLASH;
+// const ACCESS_KEY = import.meta.env.VITE_UNSPLASH_ACCESS_KEY;
+// const URL = import.meta.env.VITE_URL_UNSPLASH;
+
+const ACCESS_KEY = process.env.VITE_UNSPLASH_ACCESS_KEY;
+const URL = process.env.VITE_URL_UNSPLASH;
 
 const App = () => {
   const [images, setImages] = useState([]);
@@ -48,7 +50,7 @@ const App = () => {
         }
         setTotalPages(response.data.total_pages);
         setError(null);
-      } catch (error) {
+      } catch (err) {
         setError("Failed to fetch images");
       } finally {
         setIsLoading(false);
