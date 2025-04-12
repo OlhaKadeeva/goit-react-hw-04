@@ -11,11 +11,8 @@ import ReactModal from "react-modal";
 
 // ReactModal.setAppElement("#root");
 
-// const ACCESS_KEY = import.meta.env.VITE_UNSPLASH_ACCESS_KEY;
-// const URL = import.meta.env.VITE_URL_UNSPLASH;
-
-const ACCESS_KEY = process.env.VITE_UNSPLASH_ACCESS_KEY;
-const URL = process.env.VITE_URL_UNSPLASH;
+const ACCESS_KEY = import.meta.env.VITE_UNSPLASH_ACCESS_KEY;
+const URL = import.meta.env.VITE_URL_UNSPLASH;
 
 const App = () => {
   const [images, setImages] = useState([]);
