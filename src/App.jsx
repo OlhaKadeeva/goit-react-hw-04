@@ -5,11 +5,8 @@ import SearchBar from "./components/SearchBar/SearchBar";
 import ImageGallery from "./components/ImageGallery/ImageGallery";
 import Loader from "./components/Loader/Loader";
 import LoadMoreBtn from "./components/LoadMoreBtn/LoadMoreBtn";
-import ErrorMessage from "./components/ErrorMassage/ErrorMassage";
+import ErrorMessage from "./components/ErrorMessage/ErrorMessage";
 import ImageModal from "./components/ImageModal/ImageModal";
-import ReactModal from "react-modal";
-
-// ReactModal.setAppElement("#root");
 
 const ACCESS_KEY = import.meta.env.VITE_UNSPLASH_ACCESS_KEY;
 const URL = import.meta.env.VITE_URL_UNSPLASH;
@@ -47,7 +44,7 @@ const App = () => {
         }
         setTotalPages(response.data.total_pages);
         setError(null);
-      } catch (err) {
+      } catch (error) {
         setError("Failed to fetch images");
       } finally {
         setIsLoading(false);
